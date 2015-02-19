@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TwitterTypeahead</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag '/kabu/css/kabu', media: 'all' %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>  
+</head>
+<body class='fill-blue pad4'>
+  <div class='box fill-white pad2'>
+    <%= yield %>
+  </div>
+  <%= javascript_include_tag '/kabu/js/kabu.min' %>
+</body>
+</html>
