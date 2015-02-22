@@ -3,5 +3,6 @@ TwitterTypeahead::Application.routes.draw do
   resources :products
   resources :users
   resources :query
+  resources :accounts
   root 'search#index'
 end

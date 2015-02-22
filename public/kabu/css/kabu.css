@@ -3608,7 +3608,8 @@ fieldset.with-icon > .input-group > input[type=number].short {
   font-size: 12px;
 }
 fieldset.with-icon > .icon,
-fieldset.with-icon .input-group > .icon {
+fieldset.with-icon .input-group > .icon,
+fieldset.with-icon .twitter-typeahead > .icon {
   position: absolute;
   top: 50%;
   left: 10px;
@@ -4195,6 +4196,10 @@ button.close {
 .tt-suggestion {
   line-height: 1.3334;
   cursor: pointer;
+}
+fieldset.with-icon > .twitter-typeahead > input[type=text].short {
+  padding-left: 30px;
+  font-size: 12px;
 }
 /* Modals
 ------------------------------------------------------- */

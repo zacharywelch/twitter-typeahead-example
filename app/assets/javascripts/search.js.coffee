@@ -7,6 +7,13 @@ $ ->
       url: '/search?q=%QUERY'
       filter: (data) ->
         data.users
+      ajax:
+        beforeSend: ->
+          $('#search .spinner').toggleClass 'hidden'
+          return
+        complete: ->
+          $('#search .spinner').toggleClass 'hidden'
+          return
   )
   search_products = new Bloodhound(
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace
@@ -16,6 +23,13 @@ $ ->
       url: '/search?q=%QUERY'
       filter: (data) ->
         data.products
+      ajax:
+        beforeSend: ->
+          # $('#search .spinner').toggleClass 'hidden'
+          return
+        complete: ->
+          # $('#search .spinner').toggleClass 'hidden'
+          return
   )
   
   search_users.initialize()
