@@ -1,0 +1,27 @@
+<%= form_for(@character) do |f| %>
+  <% if @character.errors.any? %>
+    <div class='space-bottom fill-red dark pad2'>
+      <h4><%= pluralize(@character.errors.count, "error") %> prohibited this character from being saved</h4>
+
+      <ul>
+      <% @character.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'stretch' %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url, class: 'stretch' %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :show %>
+    <%= f.text_field :show, class: 'stretch' %>
+  </fieldset>
+  <%= f.submit nil, class: 'btn btn-primary space-bottom' %>
+<% end %>

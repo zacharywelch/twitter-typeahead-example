@@ -1,0 +1,35 @@
+<%%= form_for(@<%= singular_table_name %>) do |f| %>
+  <%% if @<%= singular_table_name %>.errors.any? %>
+    <div class='space-bottom fill-red dark pad2'>
+      <h4><%%= pluralize(@<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved</h4>
+
+      <ul>
+      <%% @<%= singular_table_name %>.errors.full_messages.each do |message| %>
+        <li><%%= message %></li>
+      <%% end %>
+      </ul>
+    </div>
+  <%% end %>
+
+<% attributes.each do |attribute| -%>
+  <fieldset>
+<% if attribute.password_digest? -%>
+    <%%= f.label :password %>
+    <%%= f.password_field :password, class: 'stretch' %>
+  </fieldset>
+  <fieldset>
+    <%%= f.label :password_confirmation %>
+    <%%= f.password_field :password_confirmation, class: 'stretch' %>
+<% else -%>
+  <%- if attribute.reference? -%>
+    <%%= f.label :<%= attribute.column_name %> %>
+    <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %>, class: 'stretch' %>
+  <%- else -%>
+    <%%= f.label :<%= attribute.name %> %>
+    <%%= f.<%= attribute.field_type %> :<%= attribute.name %>, class: 'stretch' %>
+  <%- end -%>
+<% end -%>
+  </fieldset>
+<% end -%>
+  <%%= f.submit nil, class: 'btn btn-primary space-bottom' %>
+<%% end %>

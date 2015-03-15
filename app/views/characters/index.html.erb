@@ -1,0 +1,37 @@
+<%= content_tag :p, class: 'space-bottom fill-green dark pad2' do %>
+  <%= notice %>
+<% end if notice %>
+<h2 class='space-bottom1'>Characters</h2>
+<table class='breathe'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image url</th>
+      <th>Show</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @characters.each do |character| %>
+      <tr>
+        <td>
+          <%= character.name %>
+        </td>
+        <td>
+          <%= character.image_url %>
+        </td>
+        <td>
+          <%= character.show %>
+        </td>
+        <td class='text-right'>
+          <%= link_to 'Show', character, class: 'pad1' %>
+          <%= link_to 'Edit', edit_character_path(character), class: 'pad1' %>
+          <%= link_to 'Destroy', character, method: :delete, class: 'pad1', data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to new_character_path, class: 'btn btn-primary' do %>
+  <i class='icon icon-plus icon-sm pad0r'></i>New Character
+<% end %>

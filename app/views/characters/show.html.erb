@@ -1,0 +1,27 @@
+<%= content_tag :p, class: 'space-bottom fill-green dark pad2' do %>
+  <%= notice %>
+<% end if notice %>
+
+<h2 class='space-bottom1'>Character</h2>
+
+<p>
+  <strong>Name:</strong>
+  <%= @character.name %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @character.image_url %>
+</p>
+
+<p>
+  <strong>Show:</strong>
+  <%= @character.show %>
+</p>
+
+
+<p>
+  <%= link_to 'Edit', edit_character_path(@character) %> |
+  <%= link_to 'Destroy', @character, method: :delete, data: { confirm: 'Are you sure?' } %> |  
+  <%= link_to 'View all', characters_path %>
+</p>
