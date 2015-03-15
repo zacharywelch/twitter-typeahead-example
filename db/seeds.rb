@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Character.create(name: 'Finn', image_url: 'finn.jpg', show: 'Adventure Time')
+Character.create(name: 'Batman', image_url: 'batman.jpg', show: 'Batman: The Brave and the Bold')
+Character.create(name: 'Ben Tennyson', image_url: 'ben10.jpg', show: 'Ben 10 Universe')
+Character.create(name: 'The Hacker', image_url: 'hacker.png', show: 'Cyberchase')
+Character.create(name: 'Professor Fizzy', image_url: 'fizzy.png', show: 'Fizzy''s Lunch Lab')
+Character.create(name: 'Bloo', image_url: 'bloo.jpg', show: 'Foster''s Home for Imaginary Friends')
+Character.create(name: 'Mordecai', image_url: 'mordecai.jpg', show: 'Regular Show')
+Character.create(name: 'Gumball', image_url: 'gumball.jpg', show: 'The Amazing World of Gumball')
+Character.create(name: 'Hero', image_url: 'hero.jpg', show: 'Hero 108')
+Character.create(name: 'Pokemon', image_url: 'pokemon.jpg', show: 'Pokemon the Series: XY')
+Character.create(name: 'Rigby', image_url: 'rigby.jpg', show: 'Regular Show')
+Character.create(name: 'Robin', image_url: 'robin.jpg', show: 'Teen Titans Go!')
+Character.create(name: 'Steven', image_url: 'steven.jpg', show: 'Steven''s Universe')
+Character.create(name: 'Super Why', image_url: 'super-why.png', show: 'Super Why!')
+Character.create(name: 'Word Girl', image_url: 'wordgirl.png', show: 'Word Girl')
