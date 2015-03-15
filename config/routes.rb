@@ -1,6 +1,4 @@
 TwitterTypeahead::Application.routes.draw do
-  resources :users
-
   resources :characters do
     get 'search', on: :collection
   end
