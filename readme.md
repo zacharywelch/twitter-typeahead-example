@@ -16,11 +16,12 @@ Switch to the new directory
 cd twitter-typeahead
 ```
 
-Bundle install and rake
+Bundle install, rake and seed
 
 ```ruby
 bundle install
 bundle exec rake db:migrate
+bundle exec rake db:seed
 ```
 
 ## Technologies used
