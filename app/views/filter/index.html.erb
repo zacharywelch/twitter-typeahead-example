@@ -1,0 +1,17 @@
+<%= form_tag search_characters_path, :method => 'get', :id => "characters_search" do %>
+  <fieldset class='contain col-sm-12'>
+    <%= text_field_tag :q, params[:q], class: 'stretch search' %>
+  </fieldset>
+
+  <div id="characters">
+    <%= render @characters %>
+  </div>  
+<% end %>
+
+<% content_for :javascripts do %>
+  <script>
+    $(function () {
+      window.characterSearch = new CharacterSearch();
+    });
+  </script>
+<% end %>

@@ -1,0 +1,13 @@
+<div class="pad2y pad1x keyline-bottom selectable" data-name='<%= character.name %>'>
+  <div class="media">
+    <div class="media-left pad1r" href="#fakelink">
+      <%= image_tag character.image_url, class: 'img-rounded', width: 40 %>
+    </div>
+    <div class="media-body">      
+      <h4><%= character.name %></h4>
+      <p class="quiet">
+        <%= character.show %>
+      </p>
+    </div>
+  </div>
+</div>

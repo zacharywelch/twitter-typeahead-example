@@ -4,5 +4,6 @@ TwitterTypeahead::Application.routes.draw do
   end
 
   resources :search, only: [:index]
+  resources :filter, only: [:index]
   root 'search#index'
 end

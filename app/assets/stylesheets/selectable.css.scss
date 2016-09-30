@@ -1,0 +1,11 @@
+.selectable:hover {
+  cursor: pointer;
+  background-color: #f0f8fc;
+}
+
+.selectable.active,
+.selectable.active:hover {
+  cursor: default;
+  background-color: #3887be;
+  color: #fff;
+}
