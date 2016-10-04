@@ -17,15 +17,17 @@
         <fieldset class='contain col-sm-12 pad4x space-bottom1'>
           <%= text_field_tag :q, params[:q], class: 'stretch search' %>
         </fieldset>
-        <div class='space-bottom2 pad4x infinite-scroll scroll'>
-          <div id='characters' class='row12'>
+        <div class='space-bottom2 pad4x'>
+          <div class='infinite-scroll scroll row12'>
+            <div id='characters'>
+            </div>
+            <p class='pagination'>
+              <%= link_to_next_page(@characters, 'Next Page', 
+                                    params: { q: '' },
+                                    remote: true,
+                                    class: 'sr-only') if defined?(@characters) %>
+            </p>
           </div>
-          <p class="pagination">
-            <%= link_to_next_page(@characters, 'Next Page', 
-                                  params: { q: '' },
-                                  remote: true,
-                                  class: 'hidden') if defined?(@characters) %>
-          </p>
         </div>
         <div class='fill-gray pad2y pad4x clearfix row4 modal-actions'>
           <ul class='pull-right'>
