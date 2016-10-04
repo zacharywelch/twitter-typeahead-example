@@ -8,7 +8,7 @@ class CharactersController < ApplicationController
   end
 
   def search
-    @characters = Character.search(params[:q])
+    @characters = Character.search(params[:q]).page(params[:page])
   end
 
   # GET /characters/1

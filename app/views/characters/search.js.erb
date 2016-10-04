@@ -1,6 +1,8 @@
 $("#characters").html("<%= escape_javascript(render(@characters)) %>");
 characterSearch.bindEvents();
-// $('.selectable').click(function(e) {
-//   $(this).siblings().removeClass('active dark');
-//   $(this).addClass('active dark');
-// });
+<% if @characters.last_page? %>
+  $('.pagination').html("That's all, folks!");
+<% else %>
+  $('.pagination')
+    .html("<%=j link_to_next_page(@characters, 'Next Page', params: { remote: true, q: '' }) %>");
+<% end %>

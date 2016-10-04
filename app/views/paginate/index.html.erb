@@ -1,0 +1,17 @@
+<h2 class='space-bottom1'>Characters</h2>
+<div class='infinite-scroll row10 scroll'>
+  <table class='breathe'>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'paginate/character', collection: @characters %>
+    </tbody>
+  </table>
+  <p class="pagination">
+    <%= link_to_next_page(@characters, 'Next Page', remote: true, class: 'hidden') %>
+  </p>
+</div>

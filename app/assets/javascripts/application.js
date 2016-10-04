@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require kabu
 //= require handlebars
+//= require jquery.infinite-pages
 //= require_tree ./templates
 //= require_tree .
