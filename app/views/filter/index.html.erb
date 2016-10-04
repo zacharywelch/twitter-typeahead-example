@@ -14,16 +14,16 @@
         <div class='pad2y pad4x center'>
           <h3>Who would you like to impersonate?</h3>
         </div>
+        <fieldset class='contain col-sm-12 pad4x space-bottom1'>
+          <%= text_field_tag :q, params[:q], class: 'stretch search' %>
+        </fieldset>
         <div class='space-bottom2 pad4x infinite-scroll scroll'>
-          <fieldset class='space-bottom1 contain col-sm-12'>
-            <%= text_field_tag :q, params[:q], class: 'stretch search' %>
-          </fieldset>
           <div id='characters' class='row12'>
           </div>
           <p class="pagination">
-            <%= link_to_next_page(@characters, 
-                                  'Next Page', 
-                                  remote: true, 
+            <%= link_to_next_page(@characters, 'Next Page', 
+                                  params: { q: '' },
+                                  remote: true,
                                   class: 'hidden') if defined?(@characters) %>
           </p>
         </div>

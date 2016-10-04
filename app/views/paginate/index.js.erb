@@ -1,9 +1,0 @@
-// Append new data
-$(".infinite-scroll tbody").append("<%= escape_javascript(render partial: 'paginate/character', collection: @characters) %>");
-// Update pagination link
-<% if @characters.last_page? %>
-  $('.pagination').html("That's all, folks!");
-<% else %>
-  $('.pagination')
-    .html("<%=j link_to_next_page(@characters, 'Next Page', remote: true, class: 'hidden') %>");
-<% end %>

@@ -1,8 +1,15 @@
-$("#characters").html("<%= escape_javascript(render(@characters)) %>");
+<% if paginating? %>
+  $("#characters").append("<%= escape_javascript(render(@characters)) %>");
+<% else %>
+  $("#characters").html("<%= escape_javascript(render(@characters)) %>");
+<% end %>
 characterSearch.bindEvents();
 <% if @characters.last_page? %>
-  $('.pagination').html("That's all, folks!");
+  $('.pagination').html("");
 <% else %>
   $('.pagination')
-    .html("<%=j link_to_next_page(@characters, 'Next Page', params: { remote: true, q: '' }) %>");
+    .html("<%=j link_to_next_page(@characters, 'Next Page', 
+                                  params: { q: params[:q].to_s },
+                                  remote: true,
+                                  class: 'hidden') %>");
 <% end %>
